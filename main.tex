@@ -1,0 +1,231 @@
+% Credit for template: https://github.com/arasgungore/arasgungore-CV
+
+\documentclass[letterpaper,10pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyphenat}
+\usepackage{fontawesome}
+\input{glyphtounicode}
+
+%---------- FONT OPTIONS ----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeOrganizationHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{\small #2} \\
+      \textit{\small#3}
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%---------- HEADING ----------
+
+\begin{center}
+  \textbf{\Huge Tushar Chenan} \\ \vspace{3pt}
+  \small
+  \faEnvelope \hspace{.5pt} \href{mailto:tusky2002@gmail.com}{tusky2002@gmail.com}
+  $|$
+  \faLinkedinSquare \hspace{.5pt} \href{https://www.linkedin.com/in/tushar-chenan/}{LinkedIn}
+  $|$
+  \faGithub \hspace{.5pt} \href{https://github.com/rocka0}{GitHub}
+  $|$
+  \faCc \hspace{.5pt} \href{https://www.codechef.com/users/getmeto5stars}{CodeChef}
+  $|$
+  \faCode \hspace{.5pt} \href{https://codeforces.com/profile/14122021}{CodeForces}
+\end{center}
+
+%----------- EDUCATION -----------
+
+\section{Education}
+\vspace{3pt}
+\resumeSubHeadingListStart
+
+\vspace{-2pt}\item
+\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+  \textbf{Birla Institute of Technology \& Science, Pilani} & Hyderabad, India \\
+  \textit{\small B.E. in Computer Science and Engineering; \textbf{CGPA: 9.69/10.00}} & \textit{\small Nov 2020 \textbf{--} July 2024} \\
+\end{tabular*}\vspace{-5pt}
+\resumeItemListStart
+\resumeItem{\textbf{Major coursework:} Operating Systems, Data Structures and Algorithms, Computer Architecture, Computer Networks, Compiler Construction, Software Engineering, Database Systems, Object-Oriented Programming}
+\resumeItem{\textbf{Additional coursework:} Foundations of Data Science, Design and Analysis of Algorithms, Computational Geometry, Theory of Computation, Discrete Structures for Computer Science, Professional Ethics, Game Theory}
+\resumeItemListEnd
+
+\vspace{-2pt}\item
+\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+  \textbf{National Public School} & Bangalore, India \\
+  \textit{\small CBSE Class XII; \textbf{CGPA: 9.64/10.00}} & \textit{\small July 2020} \\
+  \textit{\small CBSE Class X; \textbf{CGPA: 9.56/10.00}} & \textit{\small July 2018} \\
+\end{tabular*}\vspace{-7pt}
+
+\resumeSubHeadingListEnd
+
+%----------- SKILLS -----------
+
+\section{Skills}
+\vspace{2pt}
+\resumeSubHeadingListStart
+\small{\item{
+              \textbf{Languages:}{ C, C++, Python, JavaScript, HTML/CSS, SQL} \\ \vspace{3pt}
+              \textbf{Technologies and Frameworks:}{ MySQL, MongoDB, Express.js, React.js, Git, Docker, GraphQL} \\ \vspace{3pt}
+        }}
+\resumeSubHeadingListEnd
+
+%----------- WORK EXPERIENCE -----------
+
+\section{Work Experience}
+\vspace{3pt}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Google}{Bangalore, India}
+{Software Engineering Intern}{Jun 2023 \textbf{--} Aug 2023}
+\resumeItemListStart
+\resumeItem{Google developed an auxiliary cache on top of the MySQL InnoDB storage engine’s buffer pool for improved database performance.}
+\resumeItem{Designed a verification utility to ensure data integrity and metadata consistency of this secondary cache.}
+\resumeItem{The utility was written in C++. Automated unit/end-to-end tests were written with MTR (MySQL Test Run).}
+\resumeItem{Gained a deep understanding of the InnoDB storage engine, buffer pool and the MySQL database architecture.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Centre for Development of Advanced Computing (C-DAC)}{Pune, India}
+{Full-Stack Development Intern}{Jun 2022 \textbf{--} Jul 2022}
+\resumeItemListStart
+\resumeItem{Developed a digital marketing website for super-computing systems and AI/ML APIs built by C-DAC.}
+\resumeItem{Front-end was built with React.js and is styled with Bootstrap CSS. Back-end was built with Python-Django and exposes a REST API.}
+\resumeItem{Features a chatbot built with Google’s Dialog-Flow for an enhanced user experience.}
+\resumeItem{Incorporated continuous integration and deployment of the code repository to Heroku.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%----------- PROJECTS -----------
+
+\section{Projects}
+\vspace{3pt}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\textbf{Shiftrr.} $|$ MERN Stack Application}{Jan 2022 \textbf{--} May 2022}
+\resumeItemListStart
+\resumeItem{A platform for students to hire and offer freelance services in fields such as Web and App Development, Graphics Design, Music Production, and so on.}
+\resumeItem{Front-end was built with Next.js. Back-end was built with Node.js (Express) and MongoDB (Mongoose).}
+\resumeItem{Features automated unit tests, code coverage with Jest, Mocha and Chai, and deployment with GitHub Actions to Vercel.}
+\resumeItem{Developed while following Scrum guidelines and general Agile principles.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{CRUx Forum} $|$ MERN Stack Application}{Jun 2021 \textbf{--} May 2022}
+\resumeItemListStart
+\resumeItem{A platform for campus-wide communication which enables clubs and departments to share notices with students while allowing students to comment and tag users.}
+\resumeItem{Front-end was built with React.js, using Tailwind CSS for styling. Back-end was built with Node.js, MongoDB and Apollo GraphQL.}
+\resumeItem{Unit testing and code coverage handled by Jest, Mocha and Chai. Deployed via GitHub actions to AWS.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%----------- AWARDS & ACHIEVEMENTS -----------
+
+\section{Awards \& Achievements}
+\vspace{2pt}
+\resumeSubHeadingListStart
+\small{\item{
+              \textbf{Merit Scholarship:}{ Awarded a 100\% Merit Scholarship for being in the top 1\% academically in my batch.} \\ \vspace{3pt}
+              \textbf{Indian Olympiad in Informatics (INOI):}{ Top 158 among 835 students who qualified for the Indian Olympiad in Informatics.} \\ \vspace{3pt}
+              \textbf{HP Codewars, Bangalore:}{ Rank 1 out of 100+ schools at HP Codewars, Bangalore 2019.} \\ \vspace{3pt}
+              \textbf{ICPC Regionalist:}{ Rank 117/1107 at the 2020 ICPC Asia Gwalior-Pune Regional Contest.} \\ \vspace{3pt}
+              \textbf{Meta Hacker Cup:}{ Global rank 833 in Meta Hacker Cup 2023 Round 2.} \\ \vspace{3pt}
+              \textbf{Expert on CodeForces:}{ Peak rating of 1601 (Expert) on CodeForces.} \\ \vspace{3pt}
+              \textbf{5 stars on CodeChef:}{ Peak rating of 2054 (5 stars) on Codechef.} \\ \vspace{3pt}
+        }}
+\resumeSubHeadingListEnd
+
+\end{document}

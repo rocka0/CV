@@ -1,231 +1,209 @@
-% Credit for template: https://github.com/arasgungore/arasgungore-CV
+\documentclass[letterpaper]{article}
 
-\documentclass[letterpaper,10pt]{article}
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
-\usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
+\usepackage[
+    letterpaper,
+    left=0.5in,
+    right=0.5in,
+    top=0.5in,
+    bottom=0.5in,
+    footskip=0.25in
+]{geometry}
 \usepackage[english]{babel}
-\usepackage{tabularx}
-\usepackage{hyphenat}
+\usepackage[colorlinks=true, linkcolor=NavyBlue, urlcolor=NavyBlue]{hyperref}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
 \usepackage{fontawesome}
-\input{glyphtounicode}
+\usepackage{hyphenat}
+\usepackage{titlesec}
 
-%---------- FONT OPTIONS ----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
+% --- PDF Accessibility and Parsing (for ATS) ---
+\input{glyphtounicode}   % Ensures glyphs are mapped to Unicode for copy-pasting.
+\pdfgentounicode=1      % Makes the generated PDF machine-readable.
 
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
+\fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
-
 \urlstyle{same}
-
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
+    \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
-
-%-------------------------
-% Custom commands
-
-\newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
+\newcommand*{\resumeItem}[1]{
+    \item\small{#1 \vspace{-2pt}}
 }
+\newcommand*{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
+\newcommand*{\resumeSubheading}[4]{
+    \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
+        \textbf{#1} & #2 \\
+        \textit{\small#3} & \textit{\small #4} \\
     \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeSubSubheading}[2]{
+\newcommand*{\resumeProjectHeading}[2]{
     \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
+        \small#1 & #2 \\
     \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeProjectHeading}[2]{
-    \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+\newcommand*{\contact}[3]{
+    \href{#2}{#1 \hspace{.05pt} #3}
 }
+\newcommand*{\contactSeparator}{\hspace{2pt} $|$ \hspace{2pt}}
 
-\newcommand{\resumeOrganizationHeading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & \textit{\small #2} \\
-      \textit{\small#3}
-    \end{tabular*}\vspace{-7pt}
-}
+\newlist{resumeSubHeadingList}{itemize}{1}
+\setlist[resumeSubHeadingList]{leftmargin=0.15in, label={}}
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
-
-%-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newlist{resumeItemList}{itemize}{1}
+\setlist[resumeItemList]{label=$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \begin{document}
 
-%---------- HEADING ----------
-
 \begin{center}
-  \textbf{\Huge Tushar Chenan} \\ \vspace{3pt}
-  \small
-  \faEnvelope \hspace{.5pt} \href{mailto:tusky2002@gmail.com}{tusky2002@gmail.com}
-  $|$
-  \faLinkedinSquare \hspace{.5pt} \href{https://www.linkedin.com/in/tushar-chenan/}{LinkedIn}
-  $|$
-  \faGithub \hspace{.5pt} \href{https://github.com/rocka0}{GitHub}
-  $|$
-  \faCc \hspace{.5pt} \href{https://www.codechef.com/users/getmeto5stars}{CodeChef}
-  $|$
-  \faCode \hspace{.5pt} \href{https://codeforces.com/profile/14122021}{CodeForces}
+	\textbf{\Huge Tushar Chenan} \\ \vspace{3pt}
+	\small
+	\contact{\faEnvelope}{mailto:tusky2002@gmail.com}{tusky2002@gmail.com} \contactSeparator
+	% \contact{\faPhone}{tel:+911234567890}{+91 123 456 7890} \contactSeparator
+	\contact{\faLinkedinSquare}{https://www.linkedin.com/in/tushar-chenan/}{LinkedIn} \contactSeparator
+	\contact{\faGithub}{https://github.com/rocka0}{GitHub} \contactSeparator
+	\contact{\faCc}{https://www.codechef.com/users/getmeto5stars}{CodeChef} \contactSeparator
+	\contact{\faCode}{https://codeforces.com/profile/14122021}{CodeForces}
 \end{center}
 
-%----------- EDUCATION -----------
-
 \section{Education}
-\vspace{3pt}
-\resumeSubHeadingListStart
+\begin{resumeSubHeadingList}
+	\resumeSubheading
+	{Birla Institute of Technology \& Science, Pilani}
+	{Hyderabad, India}
+	{B.E. in Computer Science and Engineering (\textbf{CGPA: 9.73/10.00})}
+	{November 2020 \textbf{--} July 2024}
+	\begin{resumeItemList}
+		\resumeItem{\textbf{Distinction:} Ranked \textbf{7}th university-wide (top 0.7\%) among 1000+ students at graduation.}
+		\resumeItem{\textbf{Major coursework:} Operating Systems, Computer Networks, Compiler Construction, Computer Architecture, Theory of Computation, Microprocessors \& Interfacing, Design \& Analysis of Algorithms, Principles of Programming Languages}
+		\resumeItem{\textbf{Additional coursework:} Number Theory, Computational Geometry, Computer Graphics, Graphs and Networks, Game Theory, Discrete Structures for Computer Science, Logic in Computer Science, Foundations of Data Science, Digital Design}
+		\resumeItem{\textbf{Standardized Tests:} GRE: 170/170 Q, 153/170 V, 4.5/6 AWA $|$ TOEFL: 113/120 (R:29, L:27, S:29, W:28)}
+	\end{resumeItemList}
 
-\vspace{-2pt}\item
-\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-  \textbf{Birla Institute of Technology \& Science, Pilani} & Hyderabad, India \\
-  \textit{\small B.E. in Computer Science and Engineering; \textbf{CGPA: 9.69/10.00}} & \textit{\small Nov 2020 \textbf{--} July 2024} \\
-\end{tabular*}\vspace{-5pt}
-\resumeItemListStart
-\resumeItem{\textbf{Major coursework:} Operating Systems, Data Structures and Algorithms, Computer Architecture, Computer Networks, Compiler Construction, Software Engineering, Database Systems, Object-Oriented Programming}
-\resumeItem{\textbf{Additional coursework:} Foundations of Data Science, Design and Analysis of Algorithms, Computational Geometry, Theory of Computation, Discrete Structures for Computer Science, Professional Ethics, Game Theory}
-\resumeItemListEnd
+	\vspace{-2pt}\item
+	\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+		\textbf{National Public School} & Bangalore, India \\
+		\textit{\small CBSE Class XII (\textbf{96.4\%})} & \textit{\small July 2020} \\
+		\textit{\small CBSE Class X (\textbf{95.6\%})} & \textit{\small July 2018} \\
+	\end{tabular*}\vspace{-7pt}
+\end{resumeSubHeadingList}
 
-\vspace{-2pt}\item
-\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-  \textbf{National Public School} & Bangalore, India \\
-  \textit{\small CBSE Class XII; \textbf{CGPA: 9.64/10.00}} & \textit{\small July 2020} \\
-  \textit{\small CBSE Class X; \textbf{CGPA: 9.56/10.00}} & \textit{\small July 2018} \\
-\end{tabular*}\vspace{-7pt}
-
-\resumeSubHeadingListEnd
-
-%----------- SKILLS -----------
-
-\section{Skills}
-\vspace{2pt}
-\resumeSubHeadingListStart
-\small{\item{
-              \textbf{Languages:}{ C, C++, Python, JavaScript, HTML/CSS, SQL} \\ \vspace{3pt}
-              \textbf{Technologies and Frameworks:}{ MySQL, MongoDB, Express.js, React.js, Git, Docker, GraphQL} \\ \vspace{3pt}
-        }}
-\resumeSubHeadingListEnd
-
-%----------- WORK EXPERIENCE -----------
+\section{Technical Skills}
+\begin{resumeSubHeadingList}
+	\item \small{
+		\textbf{Programming Languages:}{ C/C++, Python, Go, JavaScript \& TypeScript, HTML/CSS, SQL} \\ \vspace{3pt}
+		\textbf{Databases \& Data Management:}{ MySQL (InnoDB, Buffer Pool), SQL Server (Locking \& MVCC, Query Execution, B+ trees), MongoDB (LSM trees), Snowflake, MapReduce, Data Warehousing \& Data Lakes, ETL Pipelines, SQL Query Optimization} \\ \vspace{3pt}
+		\textbf{Systems Engineering \& Performance:}{ Performance Benchmarking (HammerDB TPC-C \& TPC-H, Sysbench), CPU Caches, Linux Kernel (Concurrency, Memory Management, Filesystems, Containers), Network Sockets/gRPC, Low-Level C/C++ (SIMD)} \\ \vspace{3pt}
+		\textbf{Web Frameworks \& DevOps Tools:}{ React.js, Bootstrap, Node.js, Express.js, Django, GraphQL, Git, Docker, Kubernetes} \\ \vspace{3pt}
+	}
+\end{resumeSubHeadingList}
 
 \section{Work Experience}
-\vspace{3pt}
-\resumeSubHeadingListStart
+\begin{resumeSubHeadingList}
+	\resumeSubheading
+	{Google $|$ Cloud Databases, SQL Server}
+	{Bangalore, India}
+	{Performance and Software Engineer}
+	{July 2024 \textbf{--} Present}
+	\begin{resumeItemList}
+		\resumeItem{Spearheaded the fleet-wide adoption of Forced Unit Access (FUA) on EXT4 for SQL Server, increasing TPM by up to 20\% and overturning Microsoft's default (XFS), which led to an update in their \href{https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-performance-best-practices?view=sql-server-ver16\#sql-server-and-forced-unit-access-fua-io-subsystem-capability}{official documentation}.}
+		\resumeItem{Deployed a new SQL Server durability setting (\texttt{alternatewritethrough}), yielding an 18\% TPM gain; discovered and reported 3 critical bugs, resulting in fixes in official Microsoft Cumulative Updates (\href{https://learn.microsoft.com/en-us/troubleshoot/sql/releases/sqlserver-2022/cumulativeupdate16\#3487067}{CU16}, \href{https://learn.microsoft.com/en-us/troubleshoot/sql/releases/sqlserver-2022/cumulativeupdate18\#3691969}{CU18}, \href{https://learn.microsoft.com/en-us/troubleshoot/sql/releases/sqlserver-2022/cumulativeupdate20\#4123934}{CU20}).}
+		\resumeItem{Resolved the long-standing internal XFS vs. EXT4 performance debate by engineering a custom multi-client HammerDB TPC-C orchestrator to generate highly parallelized workloads, producing definitive at-scale benchmark data.}
+		\resumeItem{Architected and benchmarked an isolated Write-Ahead Logging (WAL) disk configuration, proving a low-cost disk could reduce write I/O latency and boost transaction throughput by 12\%.}
+		\resumeItem{Enhanced a Go-based stress testing framework for database integrity by introducing complex concurrency scenarios (e.g., online shrinking, indexing), catching critical storage bugs pre-deployment.}
+		\resumeItem{Responded to 100+ production alerts in 24×7 on-call rotations, including leading a high-priority escalation for a financial client by debugging a complex replication failure.}
+		\resumeItem{Led a technical deep-dive on Log-Structured Merge-Trees (LSM Trees) for an org-wide study of `Database Internals', earning a peer bonus for exceptional clarity and knowledge sharing.}
+	\end{resumeItemList}
+\end{resumeSubHeadingList}
 
-\resumeSubheading
-{Google}{Bangalore, India}
-{Software Engineering Intern}{Jun 2023 \textbf{--} Aug 2023}
-\resumeItemListStart
-\resumeItem{Google developed an auxiliary cache on top of the MySQL InnoDB storage engine’s buffer pool for improved database performance.}
-\resumeItem{Designed a verification utility to ensure data integrity and metadata consistency of this secondary cache.}
-\resumeItem{The utility was written in C++. Automated unit/end-to-end tests were written with MTR (MySQL Test Run).}
-\resumeItem{Gained a deep understanding of the InnoDB storage engine, buffer pool and the MySQL database architecture.}
-\resumeItemListEnd
+\begin{resumeSubHeadingList}
+	\resumeSubheading
+	{Apple $|$ IS\&T Global Business Intelligence}
+	{Hyderabad, India}
+	{Software Engineering Intern}
+	{January 2024 \textbf{--} June 2024}
+	\begin{resumeItemList}
+		\resumeItem{Orchestrated a scalable Snowflake data pipeline to automate freight cost allocation across terabyte-scale datasets, improving logistics traceability and reducing manual effort.}
+		\resumeItem{Reduced query latency on multi-terabyte tables by re-engineering complex SQL joins, optimizing execution based on an analysis of Snowflake's distributed query planner.}
+		\resumeItem{Designed a Python-based heuristic matching model and translated it into optimized SQL to leverage Snowflake’s distributed compute engine, reducing compute time significantly.}
+		\resumeItem{Delivered a production system for accurately accounting for over \$250,000 in logistics expenses quarterly.}
+	\end{resumeItemList}
+\end{resumeSubHeadingList}
 
-\resumeSubheading
-{Centre for Development of Advanced Computing (C-DAC)}{Pune, India}
-{Full-Stack Development Intern}{Jun 2022 \textbf{--} Jul 2022}
-\resumeItemListStart
-\resumeItem{Developed a digital marketing website for super-computing systems and AI/ML APIs built by C-DAC.}
-\resumeItem{Front-end was built with React.js and is styled with Bootstrap CSS. Back-end was built with Python-Django and exposes a REST API.}
-\resumeItem{Features a chatbot built with Google’s Dialog-Flow for an enhanced user experience.}
-\resumeItem{Incorporated continuous integration and deployment of the code repository to Heroku.}
-\resumeItemListEnd
-
-\resumeSubHeadingListEnd
-
-%----------- PROJECTS -----------
+\begin{resumeSubHeadingList}
+	\resumeSubheading
+	{Google $|$ Cloud Databases, MySQL}
+	{Bangalore, India}
+	{Software Engineering Intern}
+	{June 2023 \textbf{--} August 2023}
+	\begin{resumeItemList}
+		\resumeItem{Built a low-level C++ validation tool to verify SSD-based cache integrity in MySQL/InnoDB, operating directly on physical page structures.}
+		\resumeItem{Performed a first-principles analysis of the InnoDB storage engine, reverse-engineering its on-disk data structures and checksum algorithms to implement validation logic.}
+		\resumeItem{Parallelized I/O with C++ multithreading to exploit SSD concurrency, slashing validation time on multi-gigabyte caches from minutes to under 60 seconds.}
+		\resumeItem{Authored comprehensive end-to-end tests using the MySQL Test Run (MTR) framework to validate the tool's correctness and robustness within the database kernel.}
+	\end{resumeItemList}
+\end{resumeSubHeadingList}
 
 \section{Projects}
-\vspace{3pt}
-\resumeSubHeadingListStart
+\begin{resumeSubHeadingList}
+	\resumeProjectHeading
+	{\textbf{Concurrent Matrix Multiplication} $|$ \contact{\faGithub}{http://github.com/rocka0/OS-MATRIX-MULTIPLICATION}{C, Pthreads, IPC, Shared Memory}}
+	{November 2022 \textbf{--} January 2023}
+	\begin{resumeItemList}
+		\resumeItem{Designed a concurrent, multi-process pipeline in C to decouple I/O-bound file reading from CPU-bound computation, enabling high-throughput data transfer between processes via shared memory.}
+		\resumeItem{Utilized fine-grained parallelism using POSIX threads (pthreads), strategically distributing the workload across threads to accelerate both file processing and the matrix multiplication algorithm.}
+		\resumeItem{Engineered a custom user-space Round Robin scheduler using Linux signals (SIGSTOP, SIGCONT) for preemptive multitasking across I/O and compute processes.}
+		\resumeItem{Executed a rigorous performance evaluation using a custom Python benchmarking suite to analyze the trade-offs between thread count and context-switching overhead, visualizing the impact on turnaround and wait times.}
+	\end{resumeItemList}
+\end{resumeSubHeadingList}
 
-\resumeProjectHeading
-{\textbf{Shiftrr.} $|$ MERN Stack Application}{Jan 2022 \textbf{--} May 2022}
-\resumeItemListStart
-\resumeItem{A platform for students to hire and offer freelance services in fields such as Web and App Development, Graphics Design, Music Production, and so on.}
-\resumeItem{Front-end was built with Next.js. Back-end was built with Node.js (Express) and MongoDB (Mongoose).}
-\resumeItem{Features automated unit tests, code coverage with Jest, Mocha and Chai, and deployment with GitHub Actions to Vercel.}
-\resumeItem{Developed while following Scrum guidelines and general Agile principles.}
-\resumeItemListEnd
+\begin{resumeSubHeadingList}
+	\resumeProjectHeading
+	{\textbf{Mini C Compiler} $|$ \contact{\faGithub}{https://github.com/rocka0/Mini-C-Compiler}{C++, Flex, Bison}}
+	{March 2023 \textbf{--} May 2023}
+	\begin{resumeItemList}
+		\resumeItem{Engineered a multi-stage compiler frontend for a C subset, using Flex for lexical analysis and Bison/YACC to parse tokens into a comprehensive Abstract Syntax Tree (AST).}
+		\resumeItem{Established robust semantic analysis with a hierarchical symbol table to manage nested scopes, enforce strict type-checking, and validate variable declarations and usage.}
+		\resumeItem{Formulated an Intermediate Representation (IR) generation stage, traversing the AST to produce machine-independent three-address code (TAC) in a quadruple format.}
+		\resumeItem{Built a tree-walking interpreter to execute ASTs directly, handling function calls, program state, and dynamic array memory — enabling full runtime support for the C subset.}
+	\end{resumeItemList}
+\end{resumeSubHeadingList}
 
-\resumeProjectHeading
-{\textbf{CRUx Forum} $|$ MERN Stack Application}{Jun 2021 \textbf{--} May 2022}
-\resumeItemListStart
-\resumeItem{A platform for campus-wide communication which enables clubs and departments to share notices with students while allowing students to comment and tag users.}
-\resumeItem{Front-end was built with React.js, using Tailwind CSS for styling. Back-end was built with Node.js, MongoDB and Apollo GraphQL.}
-\resumeItem{Unit testing and code coverage handled by Jest, Mocha and Chai. Deployed via GitHub actions to AWS.}
-\resumeItemListEnd
-
-\resumeSubHeadingListEnd
-
-%----------- AWARDS & ACHIEVEMENTS -----------
+\begin{resumeSubHeadingList}
+	\resumeProjectHeading
+	{\textbf{Polygon Decomposition} $|$ \contact{\faGithub}{https://github.com/rocka0/Polygon-Decomposition}{C++, Computational Geometry, Performance Analysis}}
+	{January 2023 \textbf{--} March 2023}
+	\begin{resumeItemList}
+		\resumeItem{Implemented a high-performance application to implement a two-phase algorithm for minimal convex polygon decomposition, drawing from a \href{https://www.sciencedirect.com/science/article/abs/pii/S0377221799000338}{published research paper}.}
+		\resumeItem{Devised a Doubly Connected Edge List (DCEL) data structure to efficiently represent the planar subdivision, enabling robust geometric queries and manipulations.}
+		\resumeItem{Crafted a comprehensive Python-based testing and visualization suite to validate the algorithm's correctness and analyze its performance on polygons with up to 3000 vertices.}
+		\resumeItem{Conducted a rigorous performance analysis, benchmarking the algorithm's pseudo-polynomial time complexity and evaluating the impact of initial conditions on decomposition efficiency.}
+	\end{resumeItemList}
+\end{resumeSubHeadingList}
 
 \section{Awards \& Achievements}
-\vspace{2pt}
-\resumeSubHeadingListStart
-\small{\item{
-              \textbf{Merit Scholarship:}{ Awarded a 100\% Merit Scholarship for being in the top 1\% academically in my batch.} \\ \vspace{3pt}
-              \textbf{Indian Olympiad in Informatics (INOI):}{ Top 158 among 835 students who qualified for the Indian Olympiad in Informatics.} \\ \vspace{3pt}
-              \textbf{HP Codewars, Bangalore:}{ Rank 1 out of 100+ schools at HP Codewars, Bangalore 2019.} \\ \vspace{3pt}
-              \textbf{ICPC Regionalist:}{ Rank 117/1107 at the 2020 ICPC Asia Gwalior-Pune Regional Contest.} \\ \vspace{3pt}
-              \textbf{Meta Hacker Cup:}{ Global rank 833 in Meta Hacker Cup 2023 Round 2.} \\ \vspace{3pt}
-              \textbf{Expert on CodeForces:}{ Peak rating of 1601 (Expert) on CodeForces.} \\ \vspace{3pt}
-              \textbf{5 stars on CodeChef:}{ Peak rating of 2054 (5 stars) on Codechef.} \\ \vspace{3pt}
-        }}
-\resumeSubHeadingListEnd
+\begin{resumeSubHeadingList}
+	\item \small{
+		\textbf{Merit Scholarship:}{ Awarded a 100\% Merit Scholarship for ranking in the top 0.7\% academically in my batch.} \\ \vspace{3pt}
+		\textbf{ICPC Regionalist:}{ Placed 117\textsuperscript{th} out of 1107 teams at the 2020 ICPC Asia Gwalior-Pune Regionals.} \\ \vspace{3pt}
+		\textbf{Meta Hacker Cup:}{ Global rank 833 in Meta Hacker Cup 2023 Round 2.} \\ \vspace{3pt}
+		\textbf{Indian Olympiad in Informatics (INOI):}{ Top 158 among 835 students who qualified for the Indian Olympiad in Informatics.} \\ \vspace{3pt}
+		\textbf{Competitive Programming:}{ Peak rating of 1601 (Expert) on CodeForces and 2054 (5 stars) on CodeChef.} \\ \vspace{3pt}
+		\textbf{HP Codewars:}{ Rank 1 out of 100+ schools at HP Codewars, Bangalore 2019.} \\ \vspace{3pt}
+	}
+\end{resumeSubHeadingList}
 
 \end{document}

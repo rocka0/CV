@@ -87,7 +87,7 @@
 	{B.E. in Computer Science and Engineering (\textbf{CGPA: 9.73/10.00})}
 	{November 2020 \textbf{--} July 2024}
 	\begin{resumeItemList}
-		\resumeItem{\textbf{Distinction:} Ranked \textbf{7}th university-wide (top 0.7\%) among 1000+ students at graduation.}
+		\resumeItem{\textbf{Distinction:} Ranked \textbf{8\textsuperscript{th}} university-wide (top 0.8\%) among 1000+ students, earning a \textbf{100\% Merit Scholarship}.}
 		\resumeItem{\textbf{Major coursework:} Operating Systems, Computer Networks, Compiler Construction, Computer Architecture, Theory of Computation, Microprocessors \& Interfacing, Design \& Analysis of Algorithms, Principles of Programming Languages}
 		\resumeItem{\textbf{Additional coursework:} Number Theory, Computational Geometry, Computer Graphics, Graphs and Networks, Game Theory, Discrete Structures for Computer Science, Logic in Computer Science, Foundations of Data Science, Digital Design}
 		\resumeItem{\textbf{Standardized Tests:} GRE: 170/170 Q, 153/170 V, 4.5/6 AWA $|$ TOEFL: 113/120 (R:29, L:27, S:29, W:28)}
@@ -124,7 +124,7 @@
 		\resumeItem{Resolved the long-standing internal XFS vs. EXT4 performance debate by engineering a custom multi-client HammerDB TPC-C orchestrator to generate highly parallelized workloads, producing definitive at-scale benchmark data.}
 		\resumeItem{Architected and benchmarked an isolated Write-Ahead Logging (WAL) disk configuration, proving a low-cost disk could reduce write I/O latency and boost transaction throughput by 12\%.}
 		\resumeItem{Enhanced a Go-based stress testing framework for database integrity by introducing complex concurrency scenarios (e.g., online shrinking, indexing), catching critical storage bugs pre-deployment.}
-		\resumeItem{Responded to 100+ production alerts in 24×7 on-call rotations, including leading a high-priority escalation for a financial client by debugging a complex replication failure.}
+		\resumeItem{Responded to 100+ production alerts in $24 \times 7$ on-call rotations, including leading a high-priority escalation for a financial client by debugging a complex replication failure.}
 		\resumeItem{Led a technical deep-dive on Log-Structured Merge-Trees (LSM Trees) for an org-wide study of `Database Internals', earning a peer bonus for exceptional clarity and knowledge sharing.}
 	\end{resumeItemList}
 \end{resumeSubHeadingList}
@@ -136,10 +136,9 @@
 	{Software Engineering Intern}
 	{January 2024 \textbf{--} June 2024}
 	\begin{resumeItemList}
-		\resumeItem{Orchestrated a scalable Snowflake data pipeline to automate freight cost allocation across terabyte-scale datasets, improving logistics traceability and reducing manual effort.}
-		\resumeItem{Reduced query latency on multi-terabyte tables by re-engineering complex SQL joins, optimizing execution based on an analysis of Snowflake's distributed query planner.}
-		\resumeItem{Designed a Python-based heuristic matching model and translated it into optimized SQL to leverage Snowflake’s distributed compute engine, reducing compute time significantly.}
-		\resumeItem{Delivered a production system for accurately accounting for over \$250,000 in logistics expenses quarterly.}
+		\resumeItem{Engineered a scalable Snowflake data pipeline for freight cost allocation on terabyte-scale datasets, improving logistics traceability and enabling accurate accounting of over \$250,000 quarterly.}
+		\resumeItem{Reduced query latency on multi-terabyte tables by forensically analyzing and re-engineering complex SQL joins, optimizing execution paths based on a deep understanding of Snowflake's distributed query planner.}
+		\resumeItem{Achieved an $\sim800\times$ speedup on terabyte-scale data by translating a Python heuristic model into a massively parallel SQL implementation, exploiting Snowflake's MPP architecture to cut runtime from days to minutes.}
 	\end{resumeItemList}
 \end{resumeSubHeadingList}
 
@@ -150,35 +149,21 @@
 	{Software Engineering Intern}
 	{June 2023 \textbf{--} August 2023}
 	\begin{resumeItemList}
-		\resumeItem{Built a low-level C++ validation tool to verify SSD-based cache integrity in MySQL/InnoDB, operating directly on physical page structures.}
-		\resumeItem{Performed a first-principles analysis of the InnoDB storage engine, reverse-engineering its on-disk data structures and checksum algorithms to implement validation logic.}
-		\resumeItem{Parallelized I/O with C++ multithreading to exploit SSD concurrency, slashing validation time on multi-gigabyte caches from minutes to under 60 seconds.}
-		\resumeItem{Authored comprehensive end-to-end tests using the MySQL Test Run (MTR) framework to validate the tool's correctness and robustness within the database kernel.}
+		\resumeItem{Built a low-level C++ tool to validate MySQL/InnoDB's auxiliary SSD cache, directly manipulating physical page structures. Reverse-engineered InnoDB's on-disk formats and checksum algorithms to ensure data integrity at the block device level.}
+		\resumeItem{Improved performance significantly by parallelizing I/O operations using C++ multithreading, exploiting SSD concurrency to reduce validation time on multi-gigabyte caches from several minutes to under 60 seconds.}
+		\resumeItem{Authored comprehensive end-to-end tests within the MySQL Test Run (MTR) framework, rigorously validating the tool's correctness and robustness at the database kernel level.}
 	\end{resumeItemList}
 \end{resumeSubHeadingList}
 
-\section{Projects}
-\begin{resumeSubHeadingList}
-	\resumeProjectHeading
-	{\textbf{Concurrent Matrix Multiplication} $|$ \contact{\faGithub}{http://github.com/rocka0/OS-MATRIX-MULTIPLICATION}{C, Pthreads, IPC, Shared Memory}}
-	{November 2022 \textbf{--} January 2023}
-	\begin{resumeItemList}
-		\resumeItem{Designed a concurrent, multi-process pipeline in C to decouple I/O-bound file reading from CPU-bound computation, enabling high-throughput data transfer between processes via shared memory.}
-		\resumeItem{Utilized fine-grained parallelism using POSIX threads (pthreads), strategically distributing the workload across threads to accelerate both file processing and the matrix multiplication algorithm.}
-		\resumeItem{Engineered a custom user-space Round Robin scheduler using Linux signals (SIGSTOP, SIGCONT) for preemptive multitasking across I/O and compute processes.}
-		\resumeItem{Executed a rigorous performance evaluation using a custom Python benchmarking suite to analyze the trade-offs between thread count and context-switching overhead, visualizing the impact on turnaround and wait times.}
-	\end{resumeItemList}
-\end{resumeSubHeadingList}
-
+\section{Advanced Coursework Projects}
 \begin{resumeSubHeadingList}
 	\resumeProjectHeading
 	{\textbf{Mini C Compiler} $|$ \contact{\faGithub}{https://github.com/rocka0/Mini-C-Compiler}{C++, Flex, Bison}}
 	{March 2023 \textbf{--} May 2023}
 	\begin{resumeItemList}
-		\resumeItem{Engineered a multi-stage compiler frontend for a C subset, using Flex for lexical analysis and Bison/YACC to parse tokens into a comprehensive Abstract Syntax Tree (AST).}
-		\resumeItem{Established robust semantic analysis with a hierarchical symbol table to manage nested scopes, enforce strict type-checking, and validate variable declarations and usage.}
-		\resumeItem{Formulated an Intermediate Representation (IR) generation stage, traversing the AST to produce machine-independent three-address code (TAC) in a quadruple format.}
-		\resumeItem{Built a tree-walking interpreter to execute ASTs directly, handling function calls, program state, and dynamic array memory — enabling full runtime support for the C subset.}
+		\resumeItem{Tackled the challenge of understanding compiler architecture by engineering a multi-stage compiler frontend for a C subset, featuring a Flex-based lexer and a Bison/YACC-based parser that generates a comprehensive Abstract Syntax Tree (AST).}
+		\resumeItem{Implemented semantic analysis with a hierarchical symbol table for nested scopes and type-checking, and an Intermediate Representation (IR) generation stage for machine-independent three-address code (TAC).}
+		\resumeItem{Achieved full runtime support by building a tree-walking interpreter to execute ASTs directly, successfully managing function calls, program state, and dynamic memory.}
 	\end{resumeItemList}
 \end{resumeSubHeadingList}
 
@@ -187,17 +172,26 @@
 	{\textbf{Polygon Decomposition} $|$ \contact{\faGithub}{https://github.com/rocka0/Polygon-Decomposition}{C++, Computational Geometry, Performance Analysis}}
 	{January 2023 \textbf{--} March 2023}
 	\begin{resumeItemList}
-		\resumeItem{Implemented a high-performance application to implement a two-phase algorithm for minimal convex polygon decomposition, drawing from a \href{https://www.sciencedirect.com/science/article/abs/pii/S0377221799000338}{published research paper}.}
-		\resumeItem{Devised a Doubly Connected Edge List (DCEL) data structure to efficiently represent the planar subdivision, enabling robust geometric queries and manipulations.}
-		\resumeItem{Crafted a comprehensive Python-based testing and visualization suite to validate the algorithm's correctness and analyze its performance on polygons with up to 3000 vertices.}
-		\resumeItem{Conducted a rigorous performance analysis, benchmarking the algorithm's pseudo-polynomial time complexity and evaluating the impact of initial conditions on decomposition efficiency.}
+		\resumeItem{Authored a high-performance C++ application for minimal convex decomposition based on a two-phase algorithm from a \href{https://doi.org/10.1016/S0377-2217(99)00033-8}{research paper}, using a Doubly Connected Edge List (DCEL) for efficient geometric manipulations.}
+		\resumeItem{Validated the algorithm's correctness and performance by designing a comprehensive Python-based testing and visualization suite, enabling rigorous analysis on polygons with up to 3000 vertices.}
+		\resumeItem{Produced a detailed performance analysis that benchmarked the algorithm's pseudo-polynomial time complexity and evaluated the impact of initial conditions on decomposition efficiency.}
+	\end{resumeItemList}
+\end{resumeSubHeadingList}
+
+\begin{resumeSubHeadingList}
+	\resumeProjectHeading
+	{\textbf{Concurrent Matrix Multiplication} $|$ \contact{\faGithub}{http://github.com/rocka0/OS-MATRIX-MULTIPLICATION}{C, Pthreads, IPC, Shared Memory}}
+	{November 2022 \textbf{--} January 2023}
+	\begin{resumeItemList}
+		\resumeItem{Solved the performance bottleneck of sequential matrix multiplication by designing a concurrent, multi-process pipeline in C that decoupled I/O-bound file reading from CPU-bound computation using shared memory and Pthreads.}
+		\resumeItem{Maximized parallelism by engineering a custom user-space Round Robin scheduler with Linux signals (SIGSTOP, SIGCONT) for preemptive multitasking across processes.}
+		\resumeItem{Delivered a rigorous performance evaluation using a custom Python benchmarking suite, analyzing the trade-offs between thread count and context-switching overhead to identify optimal concurrency levels.}
 	\end{resumeItemList}
 \end{resumeSubHeadingList}
 
 \section{Awards \& Achievements}
 \begin{resumeSubHeadingList}
 	\item \small{
-		\textbf{Merit Scholarship:}{ Awarded a 100\% Merit Scholarship for ranking in the top 0.7\% academically in my batch.} \\ \vspace{3pt}
 		\textbf{ICPC Regionalist:}{ Placed 117\textsuperscript{th} out of 1107 teams at the 2020 ICPC Asia Gwalior-Pune Regionals.} \\ \vspace{3pt}
 		\textbf{Meta Hacker Cup:}{ Global rank 833 in Meta Hacker Cup 2023 Round 2.} \\ \vspace{3pt}
 		\textbf{Indian Olympiad in Informatics (INOI):}{ Top 158 among 835 students who qualified for the Indian Olympiad in Informatics.} \\ \vspace{3pt}
